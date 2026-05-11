@@ -1,175 +1,246 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Amal Omrani – HopeDim</title>
-    <meta
-      name="description"
-      content="Amal Omrani — PhD Candidate in Financial Mathematics at Université Paris Dauphine."
-    />
+    <title>Amal Omrani | PhD Candidate in Financial Mathematics</title>
+    <meta name="description" content="Amal Omrani — PhD Candidate in Financial Mathematics at Université Paris Dauphine." />
 
-    <!-- Google Font -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap"
-      rel="stylesheet"
-    />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
-      body {
-        font-family: "Inter", sans-serif;
-        max-width: 780px;
-        margin: 40px auto;
-        padding: 0 20px;
-        line-height: 1.7;
-        background: #f7fbff;
-        color: #1a1a1a;
-      }
+        :root {
+            --primary: #0a3d62; /* Dauphine Blue */
+            --accent: #1e90ff;
+            --text: #2d3436;
+            --muted: #5f7a99;
+            --bg: #f7fbff;
+            --card-bg: #ffffff;
+        }
 
-      h1 {
-        margin-bottom: 5px;
-        color: #0a3d62;
-        font-weight: 600;
-      }
+        * { box-sizing: border-box; }
 
-      h2 {
-        margin-top: 40px;
-        color: #0a3d62;
-        border-bottom: 2px solid #d6eaff;
-        padding-bottom: 5px;
-      }
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            background-color: var(--bg);
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+        }
 
-      .muted {
-        color: #5f7a99;
-      }
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
 
-      a {
-        color: #1e90ff;
-        text-decoration: none;
-      }
+        /* --- Header Section with Profile Pic --- */
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 50px;
+            border-left: 5px solid var(--primary);
+            padding-left: 30px;
+        }
 
-      a:hover,
-      a:focus {
-        text-decoration: underline;
-      }
+        .profile-pic {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            background-color: white;
+        }
 
-      .card {
-        background: white;
-        padding: 20px;
-        border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-        margin-top: 20px;
-      }
+        .header-text h1 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 2.5rem;
+            margin: 0;
+            color: var(--primary);
+            line-height: 1.1;
+        }
 
-      ul {
-        padding-left: 20px;
-      }
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--muted);
+            margin-top: 8px;
+            font-weight: 400;
+        }
 
-      li {
-        margin-bottom: 10px;
-      }
+        .links {
+            margin-top: 15px;
+            font-size: 0.95rem;
+        }
 
-      .header {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-        flex-wrap: wrap;
-      }
+        .links a {
+            color: var(--accent);
+            text-decoration: none;
+            margin-right: 15px;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .links a:hover { color: var(--primary); text-decoration: underline; }
+
+        /* --- Sections & Cards --- */
+        section { margin-bottom: 40px; }
+
+        h2 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.8rem;
+            color: var(--primary);
+            border-bottom: 2px solid #d6eaff;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            margin-top: 10px;
+        }
+
+        /* --- Publication List --- */
+        ul.pub-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        li.publication {
+            margin-bottom: 25px;
+            padding-left: 15px;
+            border-left: 2px solid #eee;
+        }
+
+        .pub-title {
+            font-weight: 600;
+            display: block;
+            font-size: 1.05rem;
+            color: #111;
+            margin-bottom: 4px;
+        }
+
+        .pub-authors { color: var(--muted); font-size: 0.95rem; }
+        .pub-venue { font-style: italic; color: var(--text); }
+
+        /* --- Tags --- */
+        .tag {
+            display: inline-block;
+            background: #e1f0ff;
+            color: #0a3d62;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin: 10px 5px 0 0;
+            font-weight: 500;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: var(--muted);
+            font-size: 0.9rem;
+            border-top: 1px solid #d6eaff;
+        }
+
+        /* Responsive Layout */
+        @media (max-width: 650px) {
+            .profile-header {
+                flex-direction: column;
+                align-items: flex-start;
+                padding-left: 20px;
+                gap: 20px;
+            }
+            .profile-pic { width: 110px; height: 110px; }
+            .header-text h1 { font-size: 2rem; }
+        }
     </style>
-  </head>
+</head>
 
-  <body>
-    <div class="header">
-      <div>
-        <h1>Amal Omrani </h1>
-        <p class="muted">PhD Candidate in Financial Mathematics • Paris</p>
+<body>
 
-        <p class="muted">
-          <a href="Amal-CV.pdf" target="_blank" rel="noopener noreferrer">📄 Download CV</a> •
-          <a href="https://github.com/HopeDim" target="_blank" rel="noopener noreferrer">GitHub</a>
-        </p>
-      </div>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="profile-header">
+            <img src="https://github.com/HopeDim.png" alt="Amal Omrani" class="profile-pic">
+            <div class="header-text">
+                <h1>Amal Omrani</h1>
+                <div class="subtitle">PhD Candidate in Financial Mathematics</div>
+                <div class="subtitle" style="margin-top:0;">Université Paris Dauphine-PSL (CEREMADE)</div>
+                
+                <div class="links">
+                    <a href="mailto:omrani@ceremade.dauphine.fr">Email</a>
+                    <a href="https://github.com/HopeDim" target="_blank">GitHub</a>
+                    <a href="https://www.linkedin.com/in/amal-omrani/" target="_blank">LinkedIn</a>
+                    <a href="Amal-CV.pdf" style="color: var(--text);">📄 CV</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- About / Research Intro -->
+        <section>
+            <div class="card">
+                <p style="margin-top: 0;">
+                    I am a PhD researcher specializing in stochastic analysis and computational finance. 
+                    My research focuses on <strong>dynamic programming methods</strong> and the numerical computation of 
+                    <strong>superhedging prices</strong> within markets subject to proportional transaction costs.
+                </p>
+                <div>
+                    <span class="tag">Financial Mathematics</span>
+                    <span class="tag">Stochastic Control</span>
+                    <span class="tag">Numerical Analysis</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- PhD Thesis Details -->
+        <section id="research">
+            <h2>Current Research</h2>
+            <div class="card">
+                <p><strong>PhD Thesis:</strong> Dynamic programming and numerical computation of superhedging prices under proportional transaction costs</p>
+                <p class="pub-authors">Supervisor: <strong>Prof. Emmanuel Lepinette</strong></p>
+            </div>
+        </section>
+
+        <!-- Publications -->
+        <section id="publications">
+            <h2>Publications & Preprints</h2>
+            <div class="card">
+                <ul class="pub-list">
+                    <li class="publication">
+                        <span class="pub-title">Explicit Recursive Construction of Super-Replication Prices under Proportional Transaction Costs</span>
+                        <span class="pub-authors">E. Lepinette & A. Omrani</span><br>
+                        <span class="pub-venue">Preprint (2025) — </span>
+                        <a href="https://arxiv.org/abs/2503.02419" target="_blank">arXiv:2503.02419</a>
+                    </li>
+
+                    <li class="publication">
+                        <span class="pub-title">Reduced Run-time and Memory Complexity Regression with a Gaussian Process Prior</span>
+                        <span class="pub-authors">A. Omrani, A. Fradi, & C. Samir</span><br>
+                        <span class="pub-venue">Technical Report (2024)</span>
+                    </li>
+
+                    <li class="publication">
+                        <span class="pub-title">Chernoff’s inequality in Riesz spaces</span>
+                        <span class="pub-authors">M. A. Ben Amor & A. Omrani</span><br>
+                        <span class="pub-venue">Quaestiones Mathematicae (2023) — </span>
+                        <a href="https://doi.org/10.2989/16073606.2022.2113474" target="_blank">Journal Link</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            &copy; 2026 Amal Omrani • CEREMADE, Université Paris Dauphine
+        </footer>
     </div>
 
-    <div class="card">
-
-      <p>
-        I am a PhD candidate in financial mathematics at Université Paris Dauphine (CEREMADE).
-        My research focuses on dynamic programming methods for computing superhedging prices under
-        transaction costs.
-      </p>
-
-      <p>
-        My journey began in engineering preparatory classes, followed by the École Normale
-        Supérieure of Tunis, where I obtained the agrégation in mathematics. I then worked as a
-        mathematics professor at the Preparatory Institute for Engineering Studies of Monastir
-        (IPEIM), an experience I greatly enjoyed. It strengthened both my scientific rigor and, on
-        a human level, my sense of responsibility and admiration for students facing a demanding
-        national exam. It also made me more aware of the subtlety involved in choosing appropriate
-        methods to support each student in their progression.
-      </p>
-
-      <p>
-       Meanwhile, I completed a Master’s degree in applied mathematics, working on Gaussian processes
-        for regression and classification, with a focus on reducing computational complexity.
-      </p>
-
-      <p>
-        Mathematics has always been a source of curiosity and enjoyment for me. 
-        I am drawn to applied mathematics for its ability to connect theory with real-world challenges, 
-        and I hope to contribute, even modestly, to meaningful applications.
-      </p>
-    </div>
-
-    <h2>Research</h2>
-    <div class="card">
-      <p>
-        <strong>PhD Thesis:</strong> Dynamic programming and numerical computation of superhedging
-        prices under proportional transaction costs<br />
-        Supervisor: Prof. Emmanuel Lepinette
-      </p>
-    </div>
-
-    <h2>Publications</h2>
-    <div class="card">
-      <ul>
-        <li>
-          Lepinette, E., &amp; Omrani, A. (2025)<br />
-          <em>Explicit Recursive Construction of Super-Replication Prices under Proportional
-            Transaction Costs</em><br />
-          <a href="https://arxiv.org/abs/2503.02419" target="_blank" rel="noopener noreferrer">arXiv</a>
-        </li>
-
-        <li>
-          Omrani, A., Fradi, A., &amp; Samir, C. (2024)<br />
-          <em>Reduced Run-time and Memory Complexity Regression with a Gaussian Process Prior</em>
-        </li>
-
-        <li>
-          Ben Amor, M. A., &amp; Omrani, A. (2023)<br />
-          <em>Chernoff’s inequality in Riesz spaces</em><br />
-          <a
-            href="https://doi.org/10.2989/16073606.2022.2113474"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Quaestiones Mathematicae</a
-          >
-        </li>
-      </ul>
-    </div>
-
-    <h2>Contact</h2>
-    <div class="card">
-      <p>
-        Email:
-        <a href="mailto:omrani@ceremade.dauphine.fr">omrani@ceremade.dauphine.fr</a><br />
-        <a
-          href="https://www.linkedin.com/in/amal-omrani/"
-          target="_blank"
-          rel="noopener noreferrer"
-          >LinkedIn</a
-        >
-      </p>
-    </div>
-  </body>
+</body>
 </html>
