@@ -55,7 +55,7 @@
         .card { background: var(--card-bg); padding: 25px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); }
         ul.pub-list { list-style: none; padding: 0; }
         li.publication { margin-bottom: 25px; padding-left: 15px; border-left: 2px solid #eee; }
-        .pub-title { font-weight: 600; display: block; font-size: 1.05rem; color: #111; }
+        .pub-title { font-weight: 600; display: block; font-size: 1.05rem; color: #111; margin-bottom: 4px; }
         .pub-authors { color: var(--muted); font-size: 0.95rem; }
         .pub-venue { font-style: italic; color: var(--text); }
         .tag {
@@ -63,8 +63,9 @@
             padding: 4px 12px; border-radius: 20px; font-size: 0.85rem;
             margin: 10px 5px 0 0; font-weight: 500;
         }
-        .seminar-list { font-size: 0.9rem; color: var(--text); display: flex; flex-wrap: wrap; gap: 10px; }
-        .seminar-item { background: #fff; border: 1px solid #d6eaff; padding: 4px 10px; border-radius: 4px; }
+        .seminar-list { font-size: 0.9rem; color: var(--text); display: flex; flex-wrap: wrap; gap: 8px; }
+        .seminar-item { background: #fff; border: 1px solid #d6eaff; padding: 4px 10px; border-radius: 4px; text-decoration: none; color: inherit; }
+        .seminar-item:hover { border-color: var(--accent); background: #f0f7ff; }
         footer { text-align: center; padding: 40px 0; color: var(--muted); font-size: 0.9rem; border-top: 1px solid #d6eaff; }
         @media (max-width: 650px) {
             .profile-header { flex-direction: column; align-items: flex-start; padding-left: 20px; }
@@ -92,33 +93,13 @@
     <section>
         <div class="card">
             <p style="margin-top: 0;">
-                I am a PhD researcher specializing in stochastic analysis and computational finance. My research focuses on <strong>dynamic programming methods</strong> and the numerical computation of <strong>superhedging prices</strong> within markets with transaction costs.
+                I am a PhD researcher specializing in stochastic analysis and computational finance. My research focuses on <strong>dynamic programming methods</strong> and the numerical computation of <strong>superhedging prices</strong> within markets subject to proportional transaction costs.
             </p>
             <div>
                 <span class="tag">Financial Mathematics</span>
                 <span class="tag">Stochastic Control</span>
                 <span class="tag">Numerical Analysis</span>
                 <span class="tag">Machine Learning</span>
-            </div>
-        </div>
-    </section>
-
-    <section id="research">
-        <h2>Current Research</h2>
-        <div class="card">
-            <p><strong>PhD Thesis:</strong> Dynamic programming and numerical computation of superhedging prices under proportional transaction costs</p>
-            <p class="pub-authors">Supervisor: <strong>Prof. Emmanuel Lepinette</strong></p>
-        </div>
-    </section>
-
-    <section id="projects">
-        <h2>Research Projects</h2>
-        <div class="card">
-            <div class="publication" style="border-left: 3px solid var(--accent); padding-left: 15px;">
-                <span class="pub-title">Reduced Gaussian processes for regression and classification</span>
-                <span class="pub-authors">LIMOS, Université Clermont Auvergne</span>
-                <p style="margin: 8px 0; font-size: 0.95rem;">Focus on reducing computational and memory complexity for large-scale datasets.</p>
-                <a href="https://github.com/anisfradi/Reduced-Run-Time-and-Memory-Complexity-of-GP" target="_blank" style="font-size: 0.85rem; color: var(--accent); font-weight: 600;">💻 View Code on GitHub</a>
             </div>
         </div>
     </section>
@@ -147,14 +128,14 @@
     </section>
 
     <section id="seminars">
-        <h2>Selected Talks & Seminars</h2>
+        <h2>Seminars & Conferences</h2>
         <div class="seminar-list">
-            <span class="seminar-item">SMFP 2025</span>
-            <span class="seminar-item">SCF 2025 (Lisbon)</span>
-            <span class="seminar-item">WQF 2025 (Palermo)</span>
-            <span class="seminar-item">Bachelier Seminar</span>
-            <span class="seminar-item">CIMPA 2024</span>
-            <span class="seminar-item">COSA 2023</span>
+            <a href="https://conference2025.streamlit.app" class="seminar-item" target="_blank">SMFP 2025</a>
+            <a href="https://scf2025.iseg.ulisboa.pt/index.php" class="seminar-item" target="_blank">SCF 2025</a>
+            <a href="https://qfw2025.community.unipa.it" class="seminar-item" target="_blank">WQF 2025</a>
+            <a href="http://www.bachelier-paris.fr" class="seminar-item" target="_blank">Bachelier Seminar</a>
+            <a href="https://jds2024.sciencesconf.org" class="seminar-item" target="_blank">JDS 2024</a>
+            <a href="https://www.cimpa.info/fr/ecoles/ordered-structures-and-their-applications-finance-and-machine-learning" class="seminar-item" target="_blank">CIMPA 2024</a>
         </div>
     </section>
 
@@ -164,20 +145,29 @@
             <ul class="pub-list">
                 <li class="publication">
                     <span class="pub-title">Université Paris Dauphine – PSL</span>
-                    <span class="pub-venue">Introduction to Finance (2025–2026) | Statistics & AI Projects (2024–2025)</span>
+                    <span class="pub-venue"><strong>Doctorante Contractuelle</strong> (2024 – Present)</span>
+                    <p style="margin: 4px 0; font-size: 0.9rem; color: var(--muted);">Introduction to Finance, Financial Markets, and AI Data Analysis projects (Python).</p>
                 </li>
                 <li class="publication">
-                    <span class="pub-title">IPEIM (Preparatory Institute for Engineering)</span>
-                    <span class="pub-venue">Algebra I & II (2019–2023)</span>
+                    <span class="pub-title">IPEIM (Institut Préparatoire aux Études d'Ingénieurs)</span>
+                    <span class="pub-venue"><strong>Professeur Agrégée</strong> (2019 – 2023)</span>
+                    <p style="margin: 4px 0; font-size: 0.9rem; color: var(--muted);">Intensive undergraduate Algebra I & II for engineering candidates.</p>
                 </li>
             </ul>
         </div>
     </section>
 
-    <section id="service">
-        <h2>Service to the Community</h2>
+    <section id="organization">
+        <h2>Scientific Event Organizations</h2>
         <div class="card">
-            <p style="margin: 0;"><strong>Co-organizer:</strong> Young Researchers’ Days (YRSD), CEREMADE (2024–2025).</p>
+            <ul class="pub-list">
+                <li class="publication" style="margin-bottom: 15px;">
+                    <strong>Organizer:</strong> <a href="https://rgosa.net/conferences/cosa-2026/" target="_blank">COSA 2026</a> — International Conference on Ordered Structures and Applications.
+                </li>
+                <li class="publication" style="margin-bottom: 0; border-left: none; padding-left: 0;">
+                    <strong>Co-organizer:</strong> <a href="https://www.ceremade.dauphine.fr/fr/actualites/young-researchers-days-2025.html" target="_blank">Young Researchers’ Days (YRSD)</a>, CEREMADE (2024–2025).
+                </li>
+            </ul>
         </div>
     </section>
 
