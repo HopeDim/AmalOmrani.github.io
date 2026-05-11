@@ -57,7 +57,6 @@
         li.publication { margin-bottom: 25px; padding-left: 15px; border-left: 2px solid #eee; }
         .pub-title { font-weight: 600; display: block; font-size: 1.05rem; color: #111; margin-bottom: 4px; }
         .pub-authors { color: var(--muted); font-size: 0.95rem; }
-        .pub-venue { font-style: italic; color: var(--text); }
         .tag {
             display: inline-block; background: #e1f0ff; color: #0a3d62;
             padding: 4px 12px; border-radius: 20px; font-size: 0.85rem;
@@ -111,19 +110,37 @@
                 <li class="publication">
                     <span class="pub-title">Explicit Recursive Construction of Super-Replication Prices under Proportional Transaction Costs</span>
                     <span class="pub-authors">E. Lepinette & A. Omrani</span><br>
-                    <span class="pub-venue">Preprint (2025) — </span><a href="https://arxiv.org/abs/2503.02419" target="_blank">arXiv:2503.02419</a>
+                    <span class="pub-venue" style="font-style: italic;">Preprint (2025) — </span><a href="https://arxiv.org/abs/2503.02419" target="_blank" style="color: var(--accent); font-weight: 600;">arXiv:2503.02419</a>
                 </li>
                 <li class="publication">
                     <span class="pub-title">Reduced Run-time and Memory Complexity Regression with a Gaussian Process Prior</span>
                     <span class="pub-authors">A. Omrani, A. Fradi, & C. Samir</span><br>
-                    <span class="pub-venue">55ème Journées de Statistique (JDS 2024), Bordeaux</span> — <a href="https://jds2024.sciencesconf.org/528096" target="_blank">Conference Link</a>
+                    <span class="pub-venue" style="font-style: italic;">55ème Journées de Statistique (JDS 2024), Bordeaux</span> — <a href="https://jds2024.sciencesconf.org/528096" target="_blank" style="color: var(--accent); font-weight: 600;">JDS Conference Link</a>
                 </li>
                 <li class="publication">
                     <span class="pub-title">Chernoff’s inequality in Riesz spaces</span>
                     <span class="pub-authors">M. A. Ben Amor & A. Omrani</span><br>
-                    <span class="pub-venue">Quaestiones Mathematicae (2023) — </span><a href="https://doi.org/10.2989/16073606.2022.2113474" target="_blank">Journal Link</a>
+                    <span class="pub-venue" style="font-style: italic;">Quaestiones Mathematicae (2023) — </span><a href="https://doi.org/10.2989/16073606.2022.2113474" target="_blank" style="color: var(--accent); font-weight: 600;">Journal Link</a>
                 </li>
             </ul>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Research & Implementation Projects</h2>
+        <div class="card">
+            <div class="publication" style="border-left: 3px solid var(--accent); padding-left: 15px; margin-bottom: 25px;">
+                <span class="pub-title">Model-Free Super-hedging of Vanilla Options under Transaction Costs</span>
+                <p style="margin: 8px 0; font-size: 0.95rem;">Numerical implementation of hedging strategies without parametric model assumptions, accounting for market frictions.</p>
+                <a href="https://github.com/HopeDim/Model-Free-Super-hedging-of-Vanilla-Options-under-Transaction-Costs" target="_blank" style="font-size: 0.85rem; color: var(--accent); font-weight: 600;">💻 View Project on GitHub</a>
+            </div>
+            
+            <div class="publication" style="border-left: 3px solid #ccc; padding-left: 15px; margin-bottom: 0;">
+                <span class="pub-title">Reduced Gaussian processes for regression and classification</span>
+                <span class="pub-authors">LIMOS, Université Clermont Auvergne</span>
+                <p style="margin: 8px 0; font-size: 0.95rem;">Focus on reducing computational and memory complexity for large-scale datasets.</p>
+                <a href="https://github.com/anisfradi/Reduced-Run-Time-and-Memory-Complexity-of-GP" target="_blank" style="font-size: 0.85rem; color: var(--accent); font-weight: 600;">💻 View Code on GitHub</a>
+            </div>
         </div>
     </section>
 
@@ -131,8 +148,8 @@
         <h2>Seminars & Conferences</h2>
         <div class="seminar-list">
             <a href="https://conference2025.streamlit.app" class="seminar-item" target="_blank">SMFP 2025</a>
-            <a href="https://scf2025.iseg.ulisboa.pt/index.php" class="seminar-item" target="_blank">SCF 2025</a>
-            <a href="https://qfw2025.community.unipa.it" class="seminar-item" target="_blank">WQF 2025</a>
+            <a href="https://scf2025.iseg.ulisboa.pt/index.php" class="seminar-item" target="_blank">SCF  Lisbon 2025</a>
+            <a href="https://qfw2025.community.unipa.it" class="seminar-item" target="_blank">WQF Palermo 2025</a>
             <a href="http://www.bachelier-paris.fr" class="seminar-item" target="_blank">Bachelier Seminar</a>
             <a href="https://jds2024.sciencesconf.org" class="seminar-item" target="_blank">JDS 2024</a>
             <a href="https://www.cimpa.info/fr/ecoles/ordered-structures-and-their-applications-finance-and-machine-learning" class="seminar-item" target="_blank">CIMPA 2024</a>
@@ -145,12 +162,12 @@
             <ul class="pub-list">
                 <li class="publication">
                     <span class="pub-title">Université Paris Dauphine – PSL</span>
-                    <span class="pub-venue"><strong>Doctorante Contractuelle</strong> (2024 – Present)</span>
+                    <span class="pub-venue"><strong>Doctoral Fellow (Contractual)</strong> | 2024 – Present</span>
                     <p style="margin: 4px 0; font-size: 0.9rem; color: var(--muted);">Introduction to Finance, Financial Markets, and AI Data Analysis projects (Python).</p>
                 </li>
                 <li class="publication">
                     <span class="pub-title">IPEIM (Institut Préparatoire aux Études d'Ingénieurs)</span>
-                    <span class="pub-venue"><strong>Professeur Agrégée</strong> (2019 – 2023)</span>
+                    <span class="pub-venue"><strong>Professeur Agrégée</strong> | 2019 – 2023</span>
                     <p style="margin: 4px 0; font-size: 0.9rem; color: var(--muted);">Intensive undergraduate Algebra I & II for engineering candidates.</p>
                 </li>
             </ul>
