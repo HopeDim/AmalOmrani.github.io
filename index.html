@@ -10,19 +10,73 @@
     <meta name="author" content="Amal Omrani">
 
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    
-    <!-- MathJax Setup for rendering LaTeX formulas dynamically -->
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/archive/3.2.2/es6/latest/mathjax-chtml.js"></script>
 
     <style>
-        /* Your existing CSS stays here */
+        :root {
+            --primary: #0a3d62; 
+            --accent: #1e90ff;
+            --text: #2d3436;
+            --muted: #5f7a99;
+            --bg: #f7fbff;
+            --card-bg: #ffffff;
+        }
+        * { box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            background-color: var(--bg);
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+        }
+        .container { max-width: 850px; margin: 0 auto; padding: 60px 20px; }
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 50px;
+            border-left: 5px solid var(--primary);
+            padding-left: 30px;
+        }
+        .profile-pic {
+            width: 140px; height: 140px; border-radius: 50%;
+            object-fit: cover; border: 4px solid white;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .header-text h1 {
+            font-family: 'Crimson Pro', serif; font-size: 2.5rem;
+            margin: 0; color: var(--primary); line-height: 1.1;
+        }
+        .subtitle { font-size: 1.1rem; color: var(--muted); margin-top: 8px; }
+        .links { margin-top: 15px; font-size: 0.95rem; }
+        .links a { color: var(--accent); text-decoration: none; margin-right: 15px; font-weight: 600; }
+        .links a:hover { text-decoration: underline; }
+        section { margin-bottom: 40px; }
+        h2 {
+            font-family: 'Crimson Pro', serif; font-size: 1.8rem;
+            color: var(--primary); border-bottom: 2px solid #d6eaff;
+            padding-bottom: 8px; margin-bottom: 20px;
+        }
+        .card { background: var(--card-bg); padding: 25px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); }
+        ul.pub-list { list-style: none; padding: 0; }
+        li.publication { margin-bottom: 25px; padding-left: 15px; border-left: 2px solid #eee; }
+        .pub-title { font-weight: 600; display: block; font-size: 1.05rem; color: #111; margin-bottom: 4px; }
+        .pub-authors { color: var(--muted); font-size: 0.95rem; }
         .tag {
-            display: inline-block; background: #e1f0ff; color: #082d49; /* Slightly darkened for better contrast */
+            display: inline-block; background: #e1f0ff; color: #0a3d62;
             padding: 4px 12px; border-radius: 20px; font-size: 0.85rem;
-            margin: 10px 5px 0 0; font-weight: 600; /* Bumped to 600 */
+            margin: 10px 5px 0 0; font-weight: 500;
+        }
+        .seminar-list { font-size: 0.9rem; color: var(--text); display: flex; flex-wrap: wrap; gap: 8px; }
+        .seminar-item { background: #fff; border: 1px solid #d6eaff; padding: 4px 10px; border-radius: 4px; text-decoration: none; color: inherit; }
+        .seminar-item:hover { border-color: var(--accent); background: #f0f7ff; }
+        footer { text-align: center; padding: 40px 0; color: var(--muted); font-size: 0.9rem; border-top: 1px solid #d6eaff; }
+        @media (max-width: 650px) {
+            .profile-header { flex-direction: column; align-items: flex-start; padding-left: 20px; }
         }
     </style>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/archive/3.2.2/es6/latest/mathjax-chtml.js"></script>
 </head>
 <body>
 
