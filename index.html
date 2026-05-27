@@ -3,22 +3,21 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    
     <title>Amal Omrani | PhD Candidate in Financial Mathematics</title>
     <meta name="description" content="Personal webpage of Amal Omrani, PhD Candidate at Université Paris Dauphine-PSL. Research in Financial Mathematics, Super-hedging, and Markets with Transaction Costs.">
     <meta name="keywords" content="Amal Omrani, Financial Mathematics, CEREMADE, Paris Dauphine, Super-hedging, Transaction Costs, S&P 500, Stochastic Calculus">
     <meta name="author" content="Amal Omrani">
-
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
     <style>
         :root {
-            --primary: #0a3d62; 
+            --primary: #0a3d62;
             --accent: #1e90ff;
             --text: #2d3436;
             --muted: #5f7a99;
             --bg: #f7fbff;
             --card-bg: #ffffff;
+            --border: #d6eaff;
         }
         * { box-sizing: border-box; }
         body {
@@ -30,10 +29,12 @@
             padding: 0;
         }
         .container { max-width: 850px; margin: 0 auto; padding: 60px 20px; }
+
+        /* ── Header ── */
         .profile-header {
             display: flex;
             align-items: center;
-            gap: 30px;
+            gap: 35px;
             margin-bottom: 50px;
             border-left: 5px solid var(--primary);
             padding-left: 30px;
@@ -41,65 +42,130 @@
         .profile-pic {
             width: 140px; height: 140px; border-radius: 50%;
             object-fit: cover; border: 4px solid white;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+            flex-shrink: 0;
         }
         .header-text h1 {
             font-family: 'Crimson Pro', serif; font-size: 2.5rem;
             margin: 0; color: var(--primary); line-height: 1.1;
         }
-        .subtitle { font-size: 1.1rem; color: var(--muted); margin-top: 8px; }
-        .links { margin-top: 15px; font-size: 0.95rem; }
-        .links a { color: var(--accent); text-decoration: none; margin-right: 15px; font-weight: 600; }
-        .links a:hover { text-decoration: underline; }
+        .subtitle { font-size: 1.05rem; color: var(--muted); margin-top: 6px; }
+        .links { margin-top: 14px; font-size: 0.95rem; display: flex; flex-wrap: wrap; gap: 4px 0; }
+        .links a {
+            color: var(--accent); text-decoration: none;
+            margin-right: 16px; font-weight: 600;
+            transition: color 0.2s;
+        }
+        .links a:hover { color: var(--primary); text-decoration: underline; }
+
+        /* ── Sections ── */
         section { margin-bottom: 40px; }
         h2 {
             font-family: 'Crimson Pro', serif; font-size: 1.8rem;
-            color: var(--primary); border-bottom: 2px solid #d6eaff;
+            color: var(--primary); border-bottom: 2px solid var(--border);
             padding-bottom: 8px; margin-bottom: 20px;
         }
-        .card { background: var(--card-bg); padding: 25px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); }
-        ul.pub-list { list-style: none; padding: 0; }
-        li.publication { margin-bottom: 25px; padding-left: 15px; border-left: 2px solid #eee; }
+        .card {
+            background: var(--card-bg); padding: 25px;
+            border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        /* ── Publications ── */
+        ul.pub-list { list-style: none; padding: 0; margin: 0; }
+        li.publication {
+            margin-bottom: 22px; padding-left: 15px;
+            border-left: 2px solid #eee;
+        }
+        li.publication:last-child { margin-bottom: 0; }
         .pub-title { font-weight: 600; display: block; font-size: 1.05rem; color: #111; margin-bottom: 4px; }
         .pub-authors { color: var(--muted); font-size: 0.95rem; }
+        .pub-link { color: var(--accent); font-weight: 600; text-decoration: none; }
+        .pub-link:hover { text-decoration: underline; }
+
+        /* ── Tags ── */
         .tag {
             display: inline-block; background: #e1f0ff; color: #0a3d62;
             padding: 4px 12px; border-radius: 20px; font-size: 0.85rem;
             margin: 10px 5px 0 0; font-weight: 500;
         }
-        .seminar-list { font-size: 0.9rem; color: var(--text); display: flex; flex-wrap: wrap; gap: 8px; }
-        .seminar-item { background: #fff; border: 1px solid #d6eaff; padding: 4px 10px; border-radius: 4px; text-decoration: none; color: inherit; }
+
+        /* ── Projects ── */
+        .project {
+            padding-left: 15px; margin-bottom: 22px;
+        }
+        .project:last-child { margin-bottom: 0; }
+        .project.featured { border-left: 3px solid var(--accent); }
+        .project.regular  { border-left: 3px solid #ccc; }
+        .project-title { font-weight: 600; font-size: 1.05rem; display: block; color: #111; margin-bottom: 2px; }
+        .project-desc { margin: 6px 0; font-size: 0.95rem; color: var(--muted); }
+        .project-link { font-size: 0.85rem; color: var(--accent); font-weight: 600; text-decoration: none; }
+        .project-link:hover { text-decoration: underline; }
+        .badge-featured {
+            display: inline-block; background: var(--accent); color: #fff;
+            font-size: 0.72rem; font-weight: 600; letter-spacing: 0.05em;
+            padding: 2px 8px; border-radius: 10px; margin-left: 8px;
+            vertical-align: middle; text-transform: uppercase;
+        }
+
+        /* ── Seminars ── */
+        .seminar-grid {
+            display: flex; flex-wrap: wrap; gap: 8px;
+        }
+        .seminar-item {
+            background: #fff; border: 1px solid var(--border);
+            padding: 6px 12px; border-radius: 6px;
+            text-decoration: none; color: var(--text);
+            font-size: 0.88rem; line-height: 1.4;
+            transition: border-color 0.2s, background 0.2s;
+        }
         .seminar-item:hover { border-color: var(--accent); background: #f0f7ff; }
-        footer { text-align: center; padding: 40px 0; color: var(--muted); font-size: 0.9rem; border-top: 1px solid #d6eaff; }
+        .seminar-item .s-name { font-weight: 600; display: block; }
+        .seminar-item .s-year { color: var(--muted); font-size: 0.8rem; }
+
+        /* ── Teaching / Org ── */
+        .role-title { font-weight: 600; font-size: 1rem; display: block; color: #111; margin-bottom: 2px; }
+        .role-meta { font-size: 0.9rem; color: var(--muted); }
+
+        /* ── Footer ── */
+        footer {
+            text-align: center; padding: 40px 0;
+            color: var(--muted); font-size: 0.9rem;
+            border-top: 1px solid var(--border);
+        }
+
+        /* ── Responsive ── */
         @media (max-width: 650px) {
             .profile-header { flex-direction: column; align-items: flex-start; padding-left: 20px; }
+            .header-text h1 { font-size: 2rem; }
         }
     </style>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/archive/3.2.2/es6/latest/mathjax-chtml.js"></script>
 </head>
 <body>
-
 <div class="container">
+
+    <!-- ── Header ── -->
     <header class="profile-header">
-        <img src="https://github.com/HopeDim.png" alt="Amal Omrani - Financial Mathematics" class="profile-pic">
+        <img src="https://github.com/HopeDim.png" alt="Amal Omrani" class="profile-pic">
         <div class="header-text">
             <h1>Amal Omrani</h1>
             <div class="subtitle">PhD Candidate in Financial Mathematics</div>
-            <div class="subtitle" style="margin-top:0;"><strong>Université Paris Dauphine-PSL</strong> (CEREMADE)</div>
+            <div class="subtitle" style="margin-top:2px;"><strong>Université Paris Dauphine-PSL</strong> &nbsp;·&nbsp; CEREMADE</div>
             <div class="links">
                 <a href="mailto:omrani@ceremade.dauphine.fr">Email</a>
                 <a href="https://github.com/HopeDim" target="_blank">GitHub</a>
                 <a href="https://www.linkedin.com/in/amal-omrani/" target="_blank">LinkedIn</a>
-                <a href="Amal-CV.pdf">  CV</a>
+                <a href="Amal-CV.pdf">CV</a>
             </div>
         </div>
     </header>
 
+    <!-- ── About ── -->
     <section>
         <div class="card">
-            <p style="margin-top: 0;">
-                I am a PhD student specializing in mathematical finance. My research focuses on <strong>dynamic programming methods</strong> and numerical computation of <strong>superhedging prices</strong> in <strong>markets with transaction costs</strong>.
+            <p style="margin-top:0;">
+                I am a PhD student specialising in mathematical finance. My research focuses on
+                <strong>dynamic programming methods</strong> and the numerical computation of
+                <strong>super-hedging prices</strong> in <strong>markets with transaction costs</strong>.
             </p>
             <div>
                 <span class="tag">Financial Mathematics</span>
@@ -109,111 +175,141 @@
         </div>
     </section>
 
+    <!-- ── Publications ── -->
     <section id="publications">
-        <h2>Publications & Preprints</h2>
+        <h2>Publications &amp; Preprints</h2>
         <div class="card">
             <ul class="pub-list">
                 <li class="publication">
-                    <span class="pub-title">Computation of the super-hedging strategies for Vanilla options with transaction costs </span>
-                    <span class="pub-authors">E. Lepinette & A. Omrani</span><br>
-                    <span class="pub-venue" style="font-style: italic;"> </span><a href="https://hal.science/hal-05626560" target="_blank" style="color: var(--accent); font-weight: 600;">hal-05626560 (2026)</a>
+                    <span class="pub-title">Computation of the Super-Hedging Strategies for Vanilla Options with Transaction Costs</span>
+                    <span class="pub-authors">E. Lepinette &amp; A. Omrani</span><br>
+                    <a class="pub-link" href="https://hal.science/hal-05626560" target="_blank">hal-05626560 (2026)</a>
                 </li>
                 <li class="publication">
                     <span class="pub-title">Conditional Random Sets in Polish Spaces with Applications to the Skorokhod Space</span>
-                    <span class="pub-authors">E. Lepinette & A. Omrani</span><br>
-                    <span class="pub-venue" style="font-style: italic;"> </span><a href="https://hal.science/view/index/docid/5623197" target="_blank" style="color: var(--accent); font-weight: 600;">hal-05623197 (2026)</a>
+                    <span class="pub-authors">E. Lepinette &amp; A. Omrani</span><br>
+                    <a class="pub-link" href="https://hal.science/view/index/docid/5623197" target="_blank">hal-05623197 (2026)</a>
                 </li>
                 <li class="publication">
                     <span class="pub-title">Explicit Recursive Construction of Super-Replication Prices under Proportional Transaction Costs</span>
-                    <span class="pub-authors">E. Lepinette & A. Omrani</span><br>
-                    <span class="pub-venue" style="font-style: italic;"> </span><a href="https://arxiv.org/abs/2503.02419" target="_blank" style="color: var(--accent); font-weight: 600;">hal-05347450 (2025)</a>
+                    <span class="pub-authors">E. Lepinette &amp; A. Omrani</span><br>
+                    <a class="pub-link" href="https://arxiv.org/abs/2503.02419" target="_blank">hal-05347450 (2025)</a>
                 </li>
                 <li class="publication">
                     <span class="pub-title">Reduced Run-time and Memory Complexity Regression with a Gaussian Process Prior</span>
-                    <span class="pub-authors">A. Omrani, A. Fradi, & C. Samir</span><br>
-                    <span class="pub-venue" style="font-style: italic;">55ème Journées de Statistique (JDS 2024), Bordeaux</span> — <a href="https://jds2024.sciencesconf.org/528096" target="_blank" style="color: var(--accent); font-weight: 600;">Conference paper (2024)</a>
+                    <span class="pub-authors">A. Omrani, A. Fradi &amp; C. Samir</span><br>
+                    <span style="font-style:italic; font-size:0.95rem; color:var(--muted);">55ème Journées de Statistique, Bordeaux — </span>
+                    <a class="pub-link" href="https://jds2024.sciencesconf.org/528096" target="_blank">Conference paper (2024)</a>
                 </li>
                 <li class="publication">
-                    <span class="pub-title">Chernoff’s inequality in Riesz spaces</span>
-                    <span class="pub-authors">M. A. Ben Amor & A. Omrani</span><br>
-                    <span class="pub-venue" style="font-style: italic;">Quaestiones Mathematicae — </span><a href="https://doi.org/10.2989/16073606.2022.2113474" target="_blank" style="color: var(--accent); font-weight: 600;">Journal article (2023)</a>
+                    <span class="pub-title">Chernoff's Inequality in Riesz Spaces</span>
+                    <span class="pub-authors">M. A. Ben Amor &amp; A. Omrani</span><br>
+                    <span style="font-style:italic; font-size:0.95rem; color:var(--muted);">Quaestiones Mathematicae — </span>
+                    <a class="pub-link" href="https://doi.org/10.2989/16073606.2022.2113474" target="_blank">Journal article (2023)</a>
                 </li>
             </ul>
         </div>
     </section>
 
+    <!-- ── Projects ── -->
     <section id="projects">
-        <h2>Research & Implementation Projects</h2>
+        <h2>Research &amp; Implementation Projects</h2>
         <div class="card">
-            <div class="publication" style="border-left: 3px solid var(--accent); padding-left: 15px; margin-bottom: 25px;">
-                <span class="pub-title">Model-Free Super-hedging in Markets with Transaction Costs: An Empirical Study on S&P 500 Data</span>
-                <p style="margin: 8px 0; font-size: 0.95rem;">Empirical validation of super-replication strategies using historical SPY ETF data.</p>
-                <a href="https://github.com/HopeDim/Superhedging-Empirical-SP500" target="_blank" style="font-size: 0.85rem; color: var(--accent); font-weight: 600;"> View Project</a>
+            <div class="project featured">
+                <span class="project-title">
+                    Model-Free Super-Hedging in Markets with Transaction Costs: An Empirical Study on S&amp;P 500 Data
+                    <span class="badge-featured">Featured</span>
+                </span>
+                <p class="project-desc">Empirical validation of super-replication strategies using historical SPY ETF data (Jan 2020 – Feb 2026). Companion to the 2026 preprint.</p>
+                <a class="project-link" href="https://github.com/HopeDim/Superhedging-Empirical-SP500" target="_blank">View on GitHub →</a>
             </div>
-     
-            <div class="publication" style="border-left: 3px solid #ccc; padding-left: 15px; margin-bottom: 25px;">
-                <span class="pub-title">Model-Free Super-hedging of Vanilla Options under Transaction Costs</span>
-                <p style="margin: 8px 0; font-size: 0.95rem;">Numerical implementation of hedging strategies.</p>
-                <a href="https://github.com/HopeDim/Model-Free-Super-hedging-of-Vanilla-Options-under-Transaction-Costs" target="_blank" style="font-size: 0.85rem; color: var(--accent); font-weight: 600;"> View Project</a>
+            <div class="project regular" style="margin-top:20px;">
+                <span class="project-title">Model-Free Super-Hedging of Vanilla Options under Transaction Costs</span>
+                <p class="project-desc">Numerical implementation of backward-recursive hedging strategies for call and put options.</p>
+                <a class="project-link" href="https://github.com/HopeDim/Model-Free-Super-hedging-of-Vanilla-Options-under-Transaction-Costs" target="_blank">View on GitHub →</a>
             </div>
-            
-            <div class="publication" style="border-left: 3px solid #ccc; padding-left: 15px; margin-bottom: 0;">
-                <span class="pub-title">Reduced Gaussian processes for regression and classification</span>
-                <span class="pub-authors">LIMOS, Université Clermont Auvergne</span>
-                <p style="margin: 8px 0; font-size: 0.95rem;">Development of methods focusing on reducing computational and memory complexity for large-scale datasets.</p>
-                <a href="https://github.com/anisfradi/Reduced-Run-Time-and-Memory-Complexity-of-GP" target="_blank" style="font-size: 0.85rem; color: var(--accent); font-weight: 600;"> View Code</a>
+            <div class="project regular" style="margin-top:20px;">
+                <span class="project-title">Reduced Gaussian Processes for Regression and Classification</span>
+                <span class="pub-authors" style="font-size:0.9rem;">LIMOS, Université Clermont Auvergne</span>
+                <p class="project-desc">Methods for reducing computational and memory complexity of Gaussian process models on large-scale datasets.</p>
+                <a class="project-link" href="https://github.com/anisfradi/Reduced-Run-Time-and-Memory-Complexity-of-GP" target="_blank">View on GitHub →</a>
             </div>
         </div>
     </section>
 
+    <!-- ── Seminars ── -->
     <section id="seminars">
-        <h2>Seminars & Conferences</h2>
-        <div class="seminar-list">
-            <a href="https://conference2025.streamlit.app" class="seminar-item" target="_blank">SMFP 2025</a>
-            <a href="https://scf2025.iseg.ulisboa.pt/index.php" class="seminar-item" target="_blank">SCF Lisbon 2025</a>
-            <a href="https://qfw2025.community.unipa.it" class="seminar-item" target="_blank">WQF Palermo 2025</a>
-            <a href="http://www.bachelier-paris.fr" class="seminar-item" target="_blank">Bachelier Seminar</a>
-            <a href="https://jds2024.sciencesconf.org" class="seminar-item" target="_blank">JDS 2024</a>
-            <a href="https://www.cimpa.info/fr/ecoles/ordered-structures-and-their-applications-finance-and-machine-learning" class="seminar-item" target="_blank">CIMPA 2024</a>
+        <h2>Seminars &amp; Conferences</h2>
+        <div class="seminar-grid">
+            <a href="https://conference2025.streamlit.app" class="seminar-item" target="_blank">
+                <span class="s-name">SMFP</span>
+                <span class="s-year">2025 · Talk</span>
+            </a>
+            <a href="https://scf2025.iseg.ulisboa.pt/index.php" class="seminar-item" target="_blank">
+                <span class="s-name">SCF Lisbon</span>
+                <span class="s-year">2025 · Talk</span>
+            </a>
+            <a href="https://qfw2025.community.unipa.it" class="seminar-item" target="_blank">
+                <span class="s-name">WQF Palermo</span>
+                <span class="s-year">2025 · Talk</span>
+            </a>
+            <a href="http://www.bachelier-paris.fr" class="seminar-item" target="_blank">
+                <span class="s-name">Bachelier Seminar</span>
+                <span class="s-year">Paris · Regular</span>
+            </a>
+            <a href="https://jds2024.sciencesconf.org" class="seminar-item" target="_blank">
+                <span class="s-name">JDS</span>
+                <span class="s-year">2024 · Talk</span>
+            </a>
+            <a href="https://www.cimpa.info/fr/ecoles/ordered-structures-and-their-applications-finance-and-machine-learning" class="seminar-item" target="_blank">
+                <span class="s-name">CIMPA School</span>
+                <span class="s-year">2024 · Participant</span>
+            </a>
         </div>
     </section>
 
+    <!-- ── Teaching ── -->
     <section id="teaching">
         <h2>Teaching</h2>
         <div class="card">
             <ul class="pub-list">
                 <li class="publication">
-                    <span class="pub-title">Université Paris Dauphine – PSL</span>
-                    <span class="pub-venue"><strong>Doctoral Fellow (Contractual)</strong> | 2024 – Present</span>
-                    <p style="margin: 4px 0; font-size: 0.9rem; color: var(--muted);">Introduction to Finance, Statistics, and AI Data Analysis projects (Python).</p>
+                    <span class="role-title">Université Paris Dauphine – PSL</span>
+                    <span class="role-meta"><strong>Doctoral Fellow (Contractual)</strong> · 2024 – Present</span>
+                    <p style="margin:4px 0 0; font-size:0.9rem; color:var(--muted);">Introduction to Finance, Statistics, and AI Data Analysis (Python).</p>
                 </li>
-                <li class="publication">
-                    <span class="pub-title">IPEIM (Institut Préparatoire aux Études d'Ingénieurs de Monastir)</span>
-                    <span class="pub-venue"><strong>Professeur Agrégée</strong> | 2019 – 2023</span>
-                    <p style="margin: 4px 0; font-size: 0.9rem; color: var(--muted);">Intensive undergraduate Algebra I & II for engineering candidates.</p>
+                <li class="publication" style="margin-bottom:0;">
+                    <span class="role-title">IPEIM, Monastir</span>
+                    <span class="role-meta"><strong>Professeure Agrégée</strong> · 2019 – 2023</span>
+                    <p style="margin:4px 0 0; font-size:0.9rem; color:var(--muted);">Intensive undergraduate Algebra I &amp; II for engineering candidates.</p>
                 </li>
             </ul>
         </div>
     </section>
 
+    <!-- ── Organisation ── -->
     <section id="organization">
-        <h2>Scientific Event Organizations</h2>
+        <h2>Scientific Event Organisation</h2>
         <div class="card">
             <ul class="pub-list">
-                <li class="publication" style="margin-bottom: 15px;">
-                    <strong>Co-Organizer:</strong> <a href="https://rgosa.net/conferences/cosa-2026/" target="_blank">COSA 2026</a> — International Conference on Ordered Structures and Applications.
+                <li class="publication">
+                    <strong>Co-Organiser:</strong>
+                    <a class="pub-link" href="https://rgosa.net/conferences/cosa-2026/" target="_blank">COSA 2026</a>
+                    — International Conference on Ordered Structures and Applications.
                 </li>
-                <li class="publication" style="margin-bottom: 15px;">
-                    <strong>Co-organizer:</strong> <a href="https://www.ceremade.dauphine.fr/fr/actualites/young-researchers-days-2025.html" target="_blank">Young Researchers’ Days (YRSD)</a>, CEREMADE (2024–2025).
+                <li class="publication" style="margin-bottom:0;">
+                    <strong>Co-Organiser:</strong>
+                    <a class="pub-link" href="https://www.ceremade.dauphine.fr/fr/actualites/young-researchers-days-2025.html" target="_blank">Young Researchers' Days (YRSD)</a>,
+                    CEREMADE (2024–2025).
                 </li>
             </ul>
         </div>
     </section>
 
     <footer>
-        &copy; 2026 Amal Omrani • CEREMADE, Université Paris Dauphine-PSL
+        &copy; 2026 Amal Omrani &nbsp;·&nbsp; CEREMADE, Université Paris Dauphine-PSL
     </footer>
-</div>
 
+</div>
 </body>
 </html>
